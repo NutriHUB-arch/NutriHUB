@@ -1,0 +1,34 @@
+import logo from './logo.svg';
+import './App.css'; 
+import Navbar from './Components/Navbar';
+import Main from './Components/Main';
+import Footer from './Components/Footer';
+import FAQ from './Components/FAQ';
+import DieticianHelp from './Components/DieticianHelp';
+import About from './Components/About';
+import OurService from './Components/OurService';
+import HowWeWork from './Components/HowWeWork';
+import ConsultationForm from './Components/ConsultationForm';
+import SpecialtiesSlider from './Components/SpecialtiesSlider';
+import TestimonialSlider from './Components/TestimonialSlider';
+import './index.css'
+
+function App() {
+  return (
+   <>
+     <Navbar title="Arogyamithra" menu="Home" about="About" service="Specalities" blog="Blog" faq="FAQ" contact="Contact"/>
+     <Main/>
+     <About/> 
+     <SpecialtiesSlider />
+     <HowWeWork />
+     <ConsultationForm/>
+     <TestimonialSlider />
+     <OurService />
+     <DieticianHelp />
+     <FAQ />
+     <Footer />
+   </> 
+  );  
+}  
+
+export default App;

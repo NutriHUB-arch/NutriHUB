@@ -1,0 +1,97 @@
+/* Main container for central alignment */
+.container1 {
+  position: relative;
+  width: 100%;
+  height: 500px; /* adjust based on your design */
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Central Image (e.g., Megha) */
+.middleimage {
+  width: auto;
+  height: 600px;
+  z-index: 1;
+} 
+
+/* Common styling for all floating images */
+.floating-image {
+  position: absolute;
+  width: 60px; /* adjust size as needed */
+  height: auto;
+  animation: rotate-slow 20s linear infinite;
+  z-index: 1;
+}
+
+/* Positioning each fruit/veggie image */
+.orange {
+  top: 20px;
+  left: 10px;
+  width: 200px;
+}
+
+.pomogranate {
+  top: 30px;
+  right: 100px;
+  size: 100px;
+  width:250px
+}
+
+.broccoli {
+  bottom: 40px;
+  right: 80px;
+  size: 200px;
+  width: 200px;
+}
+
+.tomato {
+  bottom: 50px;
+  left: 20px;
+  width: 200px;
+  size: 200px;
+}
+
+/* Optional: Floating up-down effect for more realism */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Rotating animation */
+@keyframes rotate-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Top-right aligned social icons */
+ .social-icons {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  display: flex;
+  gap: 20px;
+  z-index: 10;
+  /* justify-content: center;
+  align-items: center; */
+}
+
+.social-icons a {
+  color:black;
+  font-size: 40px;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #00b894;
+} 
+

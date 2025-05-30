@@ -1,0 +1,87 @@
+/* General animation for fade-in and slight slide-up */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-section {
+  animation: fadeSlideUp 1s ease-in-out;
+}
+
+/* Vision Box and Credentials Container */
+.about-section .p-4,
+.about-section .credentials-box {
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shine on hover */
+.about-section .p-4:hover,
+.about-section .credentials-box:hover,
+.about-section li:hover {
+  transform: translateY(-5px) scale(1.02);
+  border-image: linear-gradient(45deg, #00ffe7, #7effa0, #00ffe7) 1;
+  box-shadow: 0 0 20px rgba(0, 255, 200, 0.5);
+}
+
+/* Shine animation effect */
+.about-section .p-4::before,
+.about-section .credentials-box::before,
+.about-section li::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0.2) 100%);
+  transform: rotate(25deg);
+  transition: all 0.6s ease-in-out;
+  opacity: 0;
+}
+
+.about-section .p-4:hover::before,
+.about-section .credentials-box:hover::before,
+.about-section li:hover::before {
+  animation: shine 1s forwards;
+  opacity: 1;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) rotate(25deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(25deg);
+  }
+}
+
+/* Credentials header styling */
+.credentials-box {
+  background-color: #00b894;
+  color: #fff;
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transform: rotate(-5deg);
+}
+
+/* Animate list items */
+.about-section ul li {
+  position: relative;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-section ul li:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+}

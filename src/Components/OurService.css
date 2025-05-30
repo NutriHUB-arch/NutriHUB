@@ -1,0 +1,95 @@
+.our-service-container {
+  position:relative;
+  padding: 60px 30px;
+  background-color: #f9fdfc;
+  /* text-align: center; */
+  font-family: 'Segoe UI', sans-serif;
+  border-top: 4px solid #e0f4ec;
+  border-bottom: 4px solid #e0f4ec;
+  
+}
+
+.service-title {
+  /* position: absolute; */
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  margin-left: 610px;
+  color: #111;
+}
+
+.service-subtitle {
+  
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 40px;
+  margin-left: 500px;
+}
+
+.service-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px ;    
+  flex: 1;
+  max-width: 700px;
+}
+
+.service-card {
+  background-color: #e8fdf2;
+  border-radius: 14px;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;  
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-icon {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #256b4e;
+  margin-bottom: 8px;
+}
+
+.card-desc {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.service-image {
+     background: url('../Images/Image3.png') no-repeat center center;  
+  background-size:cover;
+ background-position: top;
+  width:600px;
+  height:700px;
+  flex-shrink: 0;  
+  
+}
+
+@media (max-width: 1024px) {
+  .service-content {
+    flex-direction: column-reverse;
+  }
+
+  .service-image {
+    width: 250px;
+    height: 350px;
+  }
+}
