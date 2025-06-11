@@ -1,4 +1,4 @@
-/* General animation for fade-in and slight slide-up */
+/* General animation */
 @keyframes fadeSlideUp {
   from {
     opacity: 0;
@@ -12,76 +12,190 @@
 
 .about-section {
   animation: fadeSlideUp 1s ease-in-out;
+  background: #ffffff; /* Use white background for clarity */
+  font-family: "Clash Display";
+  font-weight: 500;
+  max-width: 1500px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem; /* Space between cards */
+  padding: 2rem;
+  margin: -82px auto;
+  position: relative;
 }
 
-/* Vision Box and Credentials Container */
-.about-section .p-4,
-.about-section .credentials-box {
-  transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
-  border: 2px solid transparent;
+/* Stats box (top green card with 4 items) */
+.stats-box {
+  background: linear-gradient(
+    90deg,
+    #084210 0%,
+    #0e7d1d 19%,
+    #084210 49%,
+    #0e791d 74%,
+    #084210 100%
+  );
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  color: white;
+  max-width: 1300px;
+  font-family: "Gilroy-Medium";
+  font-weight: 500;
+  border: 7px solid white;
+  height: 254px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 12;
+}
+.status-box h3 p {
+  font-family: "Gilroy-Medium";
+}
+
+.stat-item h3 {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  font-family: "Clash Display";
+}
+
+.stat-item p {
+  font-size: 24px;
+  color: #f0f0f0;
+  font-family: "Clash Display";
+}
+
+/* Vision Box */
+.vision-box {
+  background: linear-gradient(135deg, #a4e400, #d0f37c, #a4e400);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(52, 73, 94, 0.15);
   position: relative;
   overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-/* Shine on hover */
-.about-section .p-4:hover,
-.about-section .credentials-box:hover,
-.about-section li:hover {
-  transform: translateY(-5px) scale(1.02);
-  border-image: linear-gradient(45deg, #00ffe7, #7effa0, #00ffe7) 1;
-  box-shadow: 0 0 20px rgba(0, 255, 200, 0.5);
+.vision-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(52, 73, 94, 0.2);
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(45deg);
+  }
 }
 
-/* Shine animation effect */
-.about-section .p-4::before,
-.about-section .credentials-box::before,
-.about-section li::before {
+.vision-box h5 {
+  position: relative;
+  z-index: 1;
+  color: #003d33;
+  font-weight: semibold;
+  font-size: 44px;
+  margin-bottom: 1rem;
+  /* letter-spacing: 0.35px; */
+}
+
+.vision-box p {
+  position: relative;
+  z-index: 1;
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.vision-box em {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  /* font-style: italic; */
+  margin-top: 1rem;
+  font-weight: 800;
+  font-size: 34px;
+  color: #003d33;
+  z-index: 1;
+  /* font-family: "Clash Display"; */
+}
+
+/* Shine effect using ::after */
+.vision-box em::after {
   content: "";
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(120deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0.2) 100%);
-  transform: rotate(25deg);
-  transition: all 0.6s ease-in-out;
-  opacity: 0;
-}
-
-.about-section .p-4:hover::before,
-.about-section .credentials-box:hover::before,
-.about-section li:hover::before {
-  animation: shine 1s forwards;
-  opacity: 1;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  transform: skewX(-20deg);
+  animation: shine 2s infinite;
 }
 
 @keyframes shine {
   0% {
-    transform: translateX(-100%) rotate(25deg);
+    left: -75%;
   }
   100% {
-    transform: translateX(100%) rotate(25deg);
+    left: 125%;
   }
 }
 
-/* Credentials header styling */
-.credentials-box {
-  background-color: #00b894;
-  color: #fff;
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transform: rotate(-5deg);
+/* Credential Items */
+.credential-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  transition: all 0.3s ease;
 }
 
-/* Animate list items */
-.about-section ul li {
-  position: relative;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+.checkmark {
+  background: linear-gradient(to bottom right, #c2f500, #9acd32, #c2f500);
+  color: #084210;
+  font-size: 1.5rem;
+  width: 45px;
+  font-weight: bold;
+  padding: 0.4rem 0.6rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.about-section ul li:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+/* Responsive */
+@media (max-width: 768px) {
+  .vision-box h5 {
+    font-size: 1.5rem;
+  }
+
+  .vision-box p {
+    font-size: 0.95rem;
+  }
+
+  .credential-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+@media only screen and (max-width: 576px) and (min-width: 320px){
+  .credential-item{
+     display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem; 
+  }
+
 }

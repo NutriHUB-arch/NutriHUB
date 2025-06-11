@@ -4,13 +4,13 @@ import "./HowWeWork.css";
 const steps = [
   {
     number: 1,
-    title: "Select Package",
-    description: "Choose the nutrition plan that fits your goals and budget",
+    title: "Get Started",
+    description: "Schedule a detailed consultation to assess your needs",
   },
   {
     number: 2,
-    title: "Book Consultation",
-    description: "Schedule a detailed consultation to assess your needs",
+    title: "Select Package",
+    description: "Choose the nutrition plan that fits your goals and budget",
   },
   {
     number: 3,

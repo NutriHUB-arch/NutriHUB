@@ -1,97 +1,248 @@
-/* Main container for central alignment */
+  /* Overall container for background and centering */
+.main-section-wrapper {
+  background: radial-gradient(circle at center, #f6fff6 0%, #ffffff 100%);
+  min-height: 90vh; /* Ensure it takes full viewport height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px; /* Adjust as needed */
+  padding-bottom: 3px; /* Adjust as needed */
+  overflow: hidden; /* Prevent horizontal scroll from floating elements */
+}
+
+/* Center content */
+.container.text-center {
+  text-align: center;
+  max-width: 1200px; /* Limit content width */
+  margin: 0 auto;
+  position: relative; /* For absolute positioning of floating images */
+}
+
+.header h1 {
+  font-size: 3rem; /* Adjust as needed */
+  margin-bottom: 10px;
+  color: #003d33;
+}
+
+.header h1 span {
+  color:#9acd32;
+}
+
+.lead.text-muted {
+  font-size: 1.15rem;
+  line-height: 1.45;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+.button-container {
+  margin-top: 30px;
+  margin-bottom: 50px;
+ 
+}
+
+.get-started-btn,
+.learn-more-btn {
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin: 0 5px;
+  transition: background-color 0.3s ease;
+  position: relative;
+  z-index: 10;
+}
+
+.learn-more-btn {
+  background-color: white;
+  color: #003d33;
+  border: 1px solid  #003d33;
+  position: relative;
+  z-index: 15;
+}
+
+.get-started-btn:hover {
+  transform: scale(1.05);
+}
+
+.learn-more-btn:hover {
+  transform: scale(1.05);
+  background-color: white;
+}
+
+/* Container for the central image and circle background */
 .container1 {
   position: relative;
   width: 100%;
-  height: 500px; /* adjust based on your design */
-  margin-top: 40px;
+  height: 650px; /* Adjust based on your design and image size */
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 5px;
+  z-index: 1; /* Ensure this is above other content but below floating icons if they overlap */
 }
 
-/* Central Image (e.g., Megha) */
+/* Central Image (Megha) */
 .middleimage {
   width: auto;
-  height: 600px;
-  z-index: 1;
-} 
+  height: 600px; /* Adjust to match your image size */
+  max-width: 100%;
+  z-index: 2; /* Make sure the image is above the circle */
+  position: relative; /* Needed for z-index to work correctly */
+}
 
-/* Common styling for all floating images */
+/* Circular background blur */
+.circle-background {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%; /* More like an ellipse in the image */
+  background: radial-gradient(
+    circle,
+    #98D300 0%,   
+    #A3D41E 54%,  
+    rgba(195, 213, 119, 0) 100%
+  );
+  filter: blur(120px); /* Increased blur for softer look */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  pointer-events: none; /* Allows clicks to pass through */
+}
+
+/* Floating images (small cards) */
 .floating-image {
   position: absolute;
-  width: 60px; /* adjust size as needed */
+  width: 70px; /* adjust size as needed */
   height: auto;
-  animation: rotate-slow 20s linear infinite;
-  z-index: 1;
+  /* Removed animation: float and rotate-slow as JS handles movement */
+  transition: transform 2s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Default transition for reset */
+  z-index: 3; /* Ensure they are above the main image and background */
 }
 
-/* Positioning each fruit/veggie image */
-.orange {
-  top: 20px;
-  left: 10px;
-  width: 200px;
+/* Individual positioning for floating images */
+.icon-top-left {
+  top: 15%;
+  left: 10%;
 }
 
-.pomogranate {
-  top: 30px;
-  right: 100px;
-  size: 100px;
-  width:250px
+.icon-mid-left {
+  top: 45%;
+  left: 5%;
 }
 
-.broccoli {
-  bottom: 40px;
-  right: 80px;
-  size: 200px;
-  width: 200px;
+.icon-bottom-left {
+  top: 75%;
+  left: 12%;
 }
 
-.tomato {
-  bottom: 50px;
-  left: 20px;
-  width: 200px;
-  size: 200px;
+.icon-top-right {
+  top: 20%;
+  right: 10%;
 }
 
-/* Optional: Floating up-down effect for more realism */
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
+.icon-mid-right {
+  top: 50%;
+  right: 7%;
+}
+
+.icon-bottom-right {
+  top: 80%;
+  right: 15%;
+}
+
+
+/* For responsiveness, adjust sizes and positions for smaller screens */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2.5rem;
   }
-  50% {
-    transform: translateY(-10px);
+
+  .lead.text-muted {
+    font-size: 1rem;
+  }
+
+  .middleimage {
+    height: 400px; /* Smaller image on smaller screens */
+  }
+
+  .circle-background {
+    width: 450px;
+    height: 450px;
+  }
+
+  .floating-image {
+    width: 50px; /* Smaller icons on smaller screens */
+  }
+
+  /* Adjust floating icon positions for smaller screens */
+  .icon-top-left { top: 10%; left: 5%; }
+  .icon-mid-left { top: 40%; left: 0%; }
+  .icon-bottom-left { top: 70%; left: 5%; }
+  .icon-top-right { top: 15%; right: 5%; }
+  .icon-mid-right { top: 45%; right: 0%; }
+  .icon-bottom-right { top: 75%; right: 5%; }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .lead.text-muted {
+    font-size: 0.9rem;
+  }
+
+  .button-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .get-started-btn, .learn-more-btn {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .middleimage {
+    height: 300px;
+  }
+
+  .circle-background {
+    width: 350px;
+    height: 350px;
+  }
+
+  .floating-image {
+    width: 40px;
+  }
+
+  /* Further adjust icon positions */
+  .icon-top-left { top: 5%; left: 2%; }
+  .icon-mid-left { top: 35%; left: -2%; }
+  .icon-bottom-left { top: 65%; left: 2%; }
+  .icon-top-right { top: 10%; right: 2%; }
+  .icon-mid-right { top: 40%; right: -2%; }
+  .icon-bottom-right { top: 70%; right: 2%; }
+}
+@media only screen and (max-width: 576px) and (min-width: 320px) {
+  .heading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center */
+    align-items: center;     /* Horizontally center (optional) */
+    height: 100vh;           /* Make it take full viewport height */
+    text-align: center;      /* Center text alignment */
+    padding: 0 1rem;         /* Optional padding */
+  }
+
+  .heading-container h1 {
+    font-size: 1.8rem; /* Adjust font-size for small screens */
+  }
+  .button-container{
+    display: flex;
+    flex-direction: row;
   }
 }
-
-/* Rotating animation */
-@keyframes rotate-slow {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-/* Top-right aligned social icons */
- .social-icons {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  display: flex;
-  gap: 20px;
-  z-index: 10;
-  /* justify-content: center;
-  align-items: center; */
-}
-
-.social-icons a {
-  color:black;
-  font-size: 40px;
-  transition: color 0.3s ease;
-}
-
-.social-icons a:hover {
-  color: #00b894;
-} 
-

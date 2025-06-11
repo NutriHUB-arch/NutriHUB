@@ -1,16 +1,21 @@
-import React from 'react'
+import React from 'react';
 import './Footer.css';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faYoutube, faInstagram, faWhatsapp, faFacebook } from '@fortawesome/free-brands-svg-icons';
 export default function Footer() {
   return (
-       <footer id="contact" className="footer">
+    <footer id="contact" className="footer">
       <div className="footer-container">
         {/* Left section */}
         <div className="footer-left">
           <h2 className="footer-logo">Nutrihub</h2>
           <p className="footer-description">
-            Lorem ipsum dolor sit amet, ut dolor consul consequat hasrem ipsum dolor sit amet, ut
-            dolor consul consequat has
+            Your trusted partner in personalized nutrition. Helping you live healthier with simple, science-backed diet plans.
+          </p>
+          <p className="footer-contact">
+            📍 Ujjain, Madhya Pradesh<br />
+            📞 +91-9301902225<br />
+            📧 megha.chandel@gmail.com
           </p>
         </div>
 
@@ -19,30 +24,40 @@ export default function Footer() {
           <div className="link-group">
             <h3>Quick Links</h3>
             <ul>
-              <li><a href="#">Homepage</a></li>
-              <li><a href="#">Diet Menu Plans</a></li>
-              <li><a href="#">Our Services</a></li>
-              <li><a href="#">Terms</a></li>
+              <li><a href="#">Home</a></li>
+              <li><a href="#specialities">Specialities</a></li>
+              <li><a href="#consultation">Book Appointment</a></li>
+              <li><a href="#">Contact Us</a></li>
               <li><a href="#">Privacy Policy</a></li>
             </ul>
           </div>
 
           <div className="link-group">
-            <h3>Other Links</h3>
+            <h3>Follow Us</h3>
             <ul>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">FAQ</a></li>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Our Team</a></li>
-              <li><a href="#">404 Page</a></li>
+              {/* Social Icons Container */}
+                    <div className="social-icons">
+                      <a href="https://www.youtube.com/@dieticianmeghachandel5061" target="_blank" rel="noopener noreferrer">
+                        <FontAwesomeIcon icon={faYoutube} />
+                      </a>
+                      <a href="https://www.instagram.com/dieticianmegha/" target="_blank" rel="noopener noreferrer">
+                        <FontAwesomeIcon icon={faInstagram} />
+                      </a>
+                      <a href="https://wa.me/9301902225" target="_blank" rel="noopener noreferrer">
+                        <FontAwesomeIcon icon={faWhatsapp} />
+                      </a>
+                      <a href="https://www.facebook.com/dieticianmegha/" target="_blank" rel="noopener noreferrer">
+                        <FontAwesomeIcon icon={faFacebook} />
+                      </a>
+                    </div>
             </ul>
           </div>
         </div>
       </div>
 
       <div className="footer-bottom">
-        © 2025 Pine. All rights reserved.
+        © 2025 Nutrihub. All rights reserved.
       </div>
     </footer>
-  )
+  );
 }

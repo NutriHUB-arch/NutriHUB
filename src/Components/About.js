@@ -1,46 +1,67 @@
-    // Components/About.js
-import React from 'react';
-    //  import './About.css';
-
+import React from "react";
+import "./About.css";
 
 export default function About() {
   return (
-    <div id="about" className="about-section container my-5 py-5">
+    <div id="about" className="about-section container-fluid py-5 px-3">
+      {/* Stats Box */}
+      <div className="stats-box row mx-auto mb-5 px-2 text-center ">
+        <div className="col-6 col-md-3 stat-item">
+          <h3>3+</h3>
+          <p>Total Industries</p>
+        </div>
+        <div className="col-6 col-md-3 stat-item">
+          <h3>150+</h3>
+          <p>Active Candidates</p>
+        </div>
+        <div className="col-6 col-md-3 stat-item">
+          <h3>1000+</h3>
+          <p>Our Trusted Clients</p>
+        </div>
+        <div className="col-6 col-md-3 stat-item">
+          <h3>18+ YRS</h3>
+          <p>Years in Business</p>
+        </div>
+      </div>
+
+      {/* About Section */}
       <h2 className="text-center fw-bold mb-3">About Nutrihub</h2>
-      <p className="text-center text-muted mb-5">
-        Nutrihub is your trusted partner in achieving optimal health through personalized nutrition guidance
+      <p className="text-center text-muted mb-5 px-md-5">
+        Nutrihub is your trusted partner in achieving optimal <br></br> health
+        through personalized nutrition guidance
       </p>
 
-      <div className="row align-items-center">
+      <div className="row align-items-center justify-content-center">
         {/* Vision Section */}
-        <div className="col-md-6 mb-4">
-          <div className="p-4 rounded-4 shadow" style={{ background: 'linear-gradient(to right, #00c9a7, #92fe9d)', transform: 'rotate(-3deg)' }}>
-            <h5 className="fw-bold text-white">Our Vision</h5>
-            <p className="text-white">
-              To empower individuals with evidence-based nutrition strategies that promote long-term health and wellness.
-              We believe in sustainable lifestyle changes rather than quick fixes.
+        <div className="col-md-6 mb-4 px-4">
+          <div className="vision-box p-4 rounded-4 shadow">
+            <h5 className="title fw-semibold">Our Vision</h5>
+            <p className="text">
+              To empower individuals with evidence-based nutrition strategies
+              that promote long-term health and wellness. We believe in
+              sustainable lifestyle changes rather than quick fixes.
+              <br />
+              <em>Megha Chandel's Credentials</em>
             </p>
           </div>
         </div>
 
         {/* Credentials Section */}
-        <div className="col-md-6">
-          <div className="text-center fw-bold mb-3" style={{
-            transform: 'rotate(-5deg)',
-            color: '#fff',
-            backgroundColor: '#00b894',
-            display: 'inline-block',
-            padding: '0.75rem 1.5rem',
-            borderRadius: '1rem',
-            boxShadow: '0 4px 8px rgba(0,0,0,0.1)'
-          }}>
-            Megha Chandel’s Credentials
-          </div>
-          <ul className="list-unstyled mt-3">
-            <li className="mb-3 p-3 bg-success text-white rounded-3 shadow-sm">✔ Certified Clinical Nutritionist</li>
-            <li className="mb-3 p-3 bg-success text-white rounded-3 shadow-sm">✔ 5+ Years of Experience</li>
-            <li className="mb-3 p-3 bg-success text-white rounded-3 shadow-sm">✔ Specialized in PCOS & Diabetes Management</li>
-            <li className="mb-3 p-3 bg-success text-white rounded-3 shadow-sm">✔ 500+ Successful Transformations</li>
+        <div className="col-md-6 px-4">
+          <ul className="list-unstyled mt-3 flex3">
+            <li className="credential-item mb-3 p-3 rounded-3 shadow-sm">
+              <div className="checkmark">✓</div> Certified Clinical Nutritionist
+            </li>
+            <li className="credential-item mb-3 p-3 rounded-3 shadow-sm">
+              <div className="checkmark">✓</div> 5+ Years of Experience
+            </li>
+            <li className="credential-item mb-3 p-3 rounded-3 shadow-sm">
+              <div className="checkmark">✓</div> Specialized in PCOS & Diabetes
+              Management
+            </li>
+            <li className="credential-item mb-3 p-3 rounded-3 shadow-sm">
+              <div className="checkmark">✓</div> 500+ Successful Transformations
+            </li>
           </ul>
         </div>
       </div>

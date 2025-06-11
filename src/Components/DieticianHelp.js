@@ -29,7 +29,7 @@ const DieticianHelp = () => {
       <h2>How a Dietician Helps You</h2>
       <div className="dietician-cards">
         {cards.map((card, index) => (
-          <div key={index} className={`dietician-card ${card.highlight ? 'highlight-card' : ''}`}>
+          <div key={index} className="dietician-card" >
             <div className="card-icon">{card.icon}</div>
             <div className="card-title">{card.title}</div>
             <div className="card-desc">{card.description}</div>

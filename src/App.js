@@ -13,18 +13,19 @@ import SpecialtiesSlider from './Components/SpecialtiesSlider';
 import TestimonialSlider from './Components/TestimonialSlider';
 import './index.css'
 
+
 function App() {
   return (
    <>
-     <Navbar title="Arogyamithra" menu="Home" about="About" service="Specalities" blog="Blog" faq="FAQ" contact="Contact"/>
+     <Navbar title="DieticianMegha" menu="Home" about="About" service="Specalities" blog="Testimonials" faq="FAQ" contact="Contact"/>
      <Main/>
      <About/> 
      <SpecialtiesSlider />
      <HowWeWork />
-     <ConsultationForm/>
-     <TestimonialSlider />
      <OurService />
      <DieticianHelp />
+     <TestimonialSlider />
+     <ConsultationForm/>
      <FAQ />
      <Footer />
    </> 

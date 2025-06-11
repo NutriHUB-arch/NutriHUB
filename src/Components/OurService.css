@@ -1,95 +1,201 @@
-.our-service-container {
-  position:relative;
-  padding: 60px 30px;
-  background-color: #f9fdfc;
-  /* text-align: center; */
-  font-family: 'Segoe UI', sans-serif;
-  border-top: 4px solid #e0f4ec;
-  border-bottom: 4px solid #e0f4ec;
-  
+/* OurService.css */
+
+.our-service {
+  max-height: 100%;
+  max-width: 1200px;
+  margin: 90px auto;
+  padding: 60px 50px;
+  text-align: center;
+  position: relative;
+  background-color:white;
 }
 
-.service-title {
-  /* position: absolute; */
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-  margin-left: 610px;
-  color: #111;
+/* CENTERED HEADER INSIDE RINGS */
+.service-header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
 }
 
-.service-subtitle {
-  
+.service-header h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.service-header p {
   font-size: 1rem;
   color: #555;
-  margin-bottom: 40px;
-  margin-left: 500px;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
-.service-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-  align-items: center;
+.radial-container {
   position: relative;
+  width: 100%;
+  height: 600px;
+  margin-top: 60px;
 }
 
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 20px ;    
-  flex: 1;
-  max-width: 700px;
+.box1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
+/* CONCENTRIC RINGS */
+.rings .ring {
+  position: absolute;
+  border-radius: 50%;
+  background-color:#98D300;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.rings .outer {
+   width: 1039.331298828125px;
+height: 837.2097778320312px;
+opacity: 0.06;
+mix-blend-mode: Multiply;
+
+}
+
+.rings .middle {
+ width: 718.08349609375px;
+height: 578.4358520507812px;
+opacity: 0.08;
+mix-blend-mode: Multiply;
+
+
+
+}
+
+.rings .inner {
+mix-blend-mode: Multiply;
+width: 459.82537841796875px;
+height: 370.4018859863281px;
+opacity: 0.06;
+mix-blend-mode: Multiply;
+
+
+}
+
+/* SERVICE CARD STYLING */
 .service-card {
-  background-color: #e8fdf2;
-  border-radius: 14px;
-  padding: 20px;
+  position: absolute;
+  width: 378.62px;
+  padding: 16.64px;
+  background-color: #d8f7b4;
+  border-radius: 9.99px;
+  border:6px solid #ecf8ce;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 9.99px;
   text-align: left;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;  
+  --base-transform: none;
+  transform: var(--base-transform);
+  transform-origin: center center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1;
 }
 
 .service-card:hover {
-  transform: translateY(-5px);
+  transform: var(--base-transform) scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+ 
 }
 
+/* ICON STYLING */
 .card-icon {
-  font-size: 1.8rem;
-  margin-bottom: 12px;
+  display: flex;
+  width: 32px;
+  font-size: 2.7rem;
+  color: #2c6e49;
+  gap: 15px;
+  margin-right: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* TITLE & DESCRIPTION */
+.card-title,
+.card-desc {
+  margin: 0;
 }
 
 .card-title {
-  font-size: 1.1rem;
   font-weight: 600;
-  color: #256b4e;
-  margin-bottom: 8px;
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+  color: #2c2c2c;
 }
 
 .card-desc {
   font-size: 0.95rem;
-  color: #333;
+  color: #444;
 }
 
-.service-image {
-     background: url('../Images/Image3.png') no-repeat center center;  
-  background-size:cover;
- background-position: top;
-  width:600px;
-  height:700px;
-  flex-shrink: 0;  
-  
+/* POSITIONING EACH CARD AROUND THE RING */
+.service-card.top-left {
+  top: 20px;
+  left: 287px;
+  --base-transform: translateX(-50%);
 }
 
-@media (max-width: 1024px) {
-  .service-content {
-    flex-direction: column-reverse;
+.service-card.top-right {
+  top: 20px;
+  right: 80px;
+  --base-transform: scale(1.05);
+}
+
+.service-card.middle-left {
+  top: 50%;
+  left: -80px;
+  --base-transform: translateY(-50%);
+}
+
+.service-card.middle-right {
+  top: 50%;
+  right: -80px;
+  --base-transform: translateY(-50%);
+}
+
+.service-card.bottom-left {
+  bottom: 20px;
+  left: 80px;
+  --base-transform: scale(1.05);
+}
+
+.service-card.bottom-right {
+  bottom: 20px;
+  right: 80px;
+  --base-transform: scale(1.05);
+}
+
+/* RESPONSIVE STACKING FOR SMALLER SCREENS */
+@media (max-width: 992px) {
+  .radial-container {
+    height: auto;
   }
 
-  .service-image {
-    width: 250px;
-    height: 350px;
+  .rings {
+    display: none;
+  }
+
+  .service-header {
+    position: static;
+    transform: none;
+    margin-bottom: 20px;
+  }
+
+  .service-card {
+    position: static;
+    margin: 20px auto;
+    transform: none !important;
   }
 }

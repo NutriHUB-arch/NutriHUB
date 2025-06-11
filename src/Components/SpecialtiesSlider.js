@@ -1,9 +1,9 @@
 // SpecialtiesSlider.js
 import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/navigation";
+import "swiper/css/pagination";
 import "./SpecialtiesSlider.css";
 
 import {
@@ -88,41 +88,44 @@ const SpecialtiesSlider = () => {
   const swiperRef = useRef(null);
 
   return (
-    <div
-      className="specialties-container"
-      onMouseEnter={() => swiperRef.current?.autoplay?.stop()}
-      onMouseLeave={() => swiperRef.current?.autoplay?.start()}
-    >
-      <h2 className="heading">Our Specialties</h2>
-      <p className="subheading">Comprehensive nutrition solutions for all your health needs</p>
-
-      <Swiper
-        modules={[Navigation, Autoplay]}
-        navigation
-        loop={true}
-        onSwiper={(swiper) => {
-          swiperRef.current = swiper;
-        }}
-        autoplay={{ delay: 1500, disableOnInteraction: false }}
-        spaceBetween={20}
-        slidesPerView={1}
-        breakpoints={{
-          640: { slidesPerView: 1 },
-          768: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
-          1280: { slidesPerView: 4 },
-        }}
+    <div className="specialties-slider">
+      <div
+        id="specialities"
+        className="specialties-container"
+        onMouseEnter={() => swiperRef.current?.autoplay?.stop()}
+        onMouseLeave={() => swiperRef.current?.autoplay?.start()}
       >
-        {specialties.map((item, index) => (
-          <SwiperSlide key={index}>
-            <div className="specialty-card">
-              <div className="icon">{item.icon}</div>
-              <h3 className="title">{item.title}</h3>
-              <p className="description">{item.description}</p>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+        <h2 className="heading">Our Specialities</h2>
+        <p className="subheading">Comprehensive nutrition solutions for all your health needs</p>
+
+        <Swiper
+          modules={[Autoplay, Pagination]}
+          onSwiper={(swiper) => {
+            swiperRef.current = swiper;
+          }}
+          autoplay={{ delay: 2000, disableOnInteraction: false }}
+          loop={true}
+          pagination={{ clickable: true }}
+          spaceBetween={20}
+          slidesPerView={1}
+          breakpoints={{
+            640: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+            1280: { slidesPerView: 3 },
+          }}
+        >
+          {specialties.map((item, index) => (
+            <SwiperSlide key={index}>
+              <div className="specialty-card">
+                <div className="icon">{item.icon}</div>
+                <h3 className="title">{item.title}</h3>
+                <p className="description">{item.description}</p>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </div>
   );
 };

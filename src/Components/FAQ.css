@@ -1,21 +1,27 @@
+.faq-wrapper {
+  background-color: white;
+}
 .faq-container {
   max-width: 970px;
   margin: 0 auto;
   padding: 40px 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
+  background-color: white;
 }
 
 .faq-title {
-  font-size: 28px;
-  font-weight: bold;
+  font-size:2.2rem;
+  font-weight: 700;
   margin-bottom: 10px;
+  color: #111;
 }
 
 .faq-subtitle {
-  font-size: 16px;
-  color: #666;
+  font-size: 1rem;
+  color: #777;
   margin-bottom: 30px;
+  font-weight: 500;
 }
 
 .faq-list {
@@ -25,26 +31,34 @@
 }
 
 .faq-item {
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 12px;
   padding: 16px 20px;
-  background-color: #fafafa;
+  background-color: #FCFCFC;
   text-align: left;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
   cursor: pointer;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.faq-item:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
 .faq-question {
   display: flex;
   justify-content: space-between;
-  font-weight: 600;
-  font-size: 16px;
-  color: #222;
+  align-items: center;
+  font-weight: 400;
+  font-size: 22px;
+  color: #111;
 }
 
 .faq-answer {
   margin-top: 12px;
-  font-size: 15px;
+  font-size: 18px;
   color: #444;
   line-height: 1.6;
+  font-weight: 450;
+  font-family: "gilroy-Medium";
 }

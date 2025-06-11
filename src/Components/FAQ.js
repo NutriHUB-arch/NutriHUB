@@ -36,6 +36,7 @@ const FAQ = () => {
   };
 
   return (
+    <div className="faq-wrapper">
     <div id="faq"className="faq-container">
       <h2 className="faq-title">Frequently Asked Questions</h2>
       <p className="faq-subtitle">Empowering Your Nutrition Journey</p>
@@ -55,6 +56,7 @@ const FAQ = () => {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 };

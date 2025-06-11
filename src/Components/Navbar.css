@@ -1,33 +1,88 @@
-.nav-btn {
-  padding: 10px 20px;
-  border-radius: 999px;
-  font-weight: 600;
-  text-decoration: none;
-  display: inline-block;
-  transition: all 0.3s ease;
-  font-size: 16px;
+.navbar {
+  background-color: rgb(254, 252, 252) !important; /* Light pinkish background */
+  padding: 10px 0;
 }
 
+.navbar-logo {
+  height: 70px;
+  width: auto;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.navbar-logo2 {
+  height: 60px;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.Heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5px;
+  gap: 2px;
+}
+
+.Heading img {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+.nav-link {
+  font-weight: 600;
+  color: #1e1e2f !important;
+}
+
+.nav-link:hover {
+  color: #16a085 !important;
+}
+
+  .nav-btn {
+    padding: 10px 24px;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    width: auto;
+    display: flex;
+    align-items: flex-end;
+    transition: all 0.3s ease;
+    font-size: 16px;
+  }
+  .navbar-right {
+  display: flex;
+  justify-content: flex-end;
+  
+}
+
+
 .nav-btn.primary {
-  background-color: #1abc9c;
+  background-color: #023e10; /* Dark green */
   color: white;
-  border: none;
+  
 }
 
 .nav-btn.primary:hover {
-  background-color: #16a085;
+  background-color: #035d18;
 }
 
-.nav-btn.outline {
-  background-color: transparent;
-  color: #1abc9c;
-  border: 2px solid #1abc9c;
+@media only screen and (max-width: 576px) and (min-width: 320px) {
+  .navbar-right{
+    display: none;
+  }
+  .flex1{
+    display:flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+  }
+  
 }
 
-.nav-btn.outline:hover {
-  background-color: #1abc9c;
-  color: white;
-}
-.Heading{
-    font-size: 40px;
-}

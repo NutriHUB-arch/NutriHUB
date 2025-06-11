@@ -1,65 +1,80 @@
 .dietician-container {
-  background-color: #ddfce7;
-  padding: 50px 20px;
+  background: linear-gradient(to right, #98D300, #eaf7cb, #9CD40D);
+  padding: 60px 20px;
   text-align: center;
   font-family: 'Segoe UI', sans-serif;
+  max-height: 100%;
+  margin-top: 100px;
 }
 
 .dietician-container h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
+  font-size: 2.2rem;
   font-weight: 700;
-  color: #111;
+  color: #1a1a1a;
+  margin-bottom: 40px;
 }
 
 .dietician-cards {
   display: flex;
   justify-content: center;
-  gap: 20px;
   flex-wrap: wrap;
+  gap: 30px;
 }
 
 .dietician-card {
-  background-color: #f0fff6;
-  border-radius: 16px;
-  padding: 20px;
-  width: 280px;
+  width: 368px;
+  height: 231px;
+  padding: 24px;
+  row-gap: 28px;
+  border-radius: 18px;
+  background-color: #f5ffdb;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
   text-align: left;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+  border: 6px solid rgb(249, 247, 247);
 }
 
+/* Apply hover on the card itself */
 .dietician-card:hover {
-  transform: translateY(-5px);
+  background: linear-gradient(135deg, #0d581f, #2a8c3d);
+  transform: translateY(-6px);
+  color: #e2fddc;
 }
 
+/* Make sure all inner text also changes */
+.dietician-card:hover * {
+  color: #e2fddc !important;
+}
+
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  color: #0c4016;
+  background-color: none;
+}
+
+.highlight-card .card-icon {
+  color: #ffffff;
+}
 
 .card-title {
-  font-weight: bold;
   font-size: 1.1rem;
-  color: #255f44;
-  margin-bottom: 10px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+}
+
+.highlight-card .card-title {
+  color: #ffffff;
 }
 
 .card-desc {
-  color: #444;
   font-size: 0.95rem;
-  line-height: 1.4;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #333;
 }
 
-.highlight-card {
-  background: linear-gradient(135deg, #00c875, #a6f5b2);
-  color: #fff;
+.highlight-card .card-desc {
+  color: #e9ffe5;
 }
-
-.highlight-card .card-title,
-.highlight-card .card-desc,
-.highlight-card .card-icon {
-  color: #fff;
-}
-.card-icon {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  color: #00894d;
-}
-
