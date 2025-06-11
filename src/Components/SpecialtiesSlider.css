@@ -29,6 +29,7 @@
   font-size: 1rem;
   color: #555;
   margin-bottom: 2rem;
+  margin-left: 430px;
 }
 
 .specialty-card {
@@ -56,12 +57,12 @@
     #0e791d 74%,
     #084210 100%
   );
-  color: white !important;
+  /* color: white !important; */
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 .specialty-card:hover,
 .specialty-card:hover * {
-  color: white;
+  color: #e2fddc !important;
 }
 
 .icon {

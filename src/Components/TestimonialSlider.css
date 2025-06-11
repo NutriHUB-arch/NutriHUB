@@ -131,7 +131,7 @@
   height: 45px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #1d572e;
+  /* border: 2px solid #1d572e; */
 }
 
 .reviewer-details {
@@ -150,13 +150,11 @@
 }
 
 .stars {
-  color: #f1c40f;
+   color:  #98D300;
   font-size: 15px;
   gap: 2px;
   
 }
-
-
 
 /* Slick Dots */
 .slick-dots{

@@ -1,5 +1,4 @@
-// OurService.js
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './OurService.css';
 import { FaClipboardList, FaUserMd, FaSyncAlt, FaChartLine, FaRedoAlt, FaTag } from 'react-icons/fa';
 
@@ -12,32 +11,62 @@ const serviceCards = [
   { icon: <FaTag />,          title: 'Affordable Packages',     description: 'Quality nutrition guidance at competitive prices for everyone', position: 'bottom-right' },
 ];
 
-const OurService = () => (
-  <div className="our-service">
-    <div className="radial-container">
-      {/* center header inside rings */}
-      <div className="service-header">
-        <h2>Our Service</h2>
-        <p>Comprehensive nutrition solutions for all your health needs</p>
-      </div>
+const OurService = () => {
+  const sliderRef = useRef(null);
+  const indexRef = useRef(0);
 
-      <div className="rings">
-         <div className="ring outer" />
-        <div className="ring middle" />
-        <div className="ring inner" />
-      </div>
+  useEffect(() => {
+    const slider = sliderRef.current;
+    if (!slider) return;
 
-      {serviceCards.map((card, i) => (
-        <div key={i} className={`service-card ${card.position}`}>
-          <div className="card-icon">{card.icon}</div>
-          <div className='box1'>
-            <div className="card-title">{card.title}</div>
-            <div className="card-desc">{card.description}</div>
-          </div>
+    const interval = setInterval(() => {
+      const cardWidth = slider.offsetWidth;
+      indexRef.current++;
+
+      if (indexRef.current >= serviceCards.length) {
+        // Reset index to 0 and scroll instantly (no animation) to start
+        indexRef.current = 0;
+        slider.scrollTo({ left: 0, behavior: 'auto' });
+      } else {
+        // Scroll smoothly to next card
+        slider.scrollTo({
+          left: indexRef.current * cardWidth,
+          behavior: 'smooth',
+        });
+      }
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div id="services1" className="our-service">
+      <div className="radial-container">
+        <div className="service-header">
+          <h2>Our Service</h2>
+          <div className="sub"></div>
         </div>
-      ))}
+
+        <div className="rings">
+          <div className="ring outer" />
+          <div className="ring middle" />
+          <div className="ring inner" />
+        </div>
+
+        <div className="service-card-slider" ref={sliderRef}>
+          {serviceCards.map((card, i) => (
+            <div key={i} className={`service-card ${card.position}`}>
+              <div className="card-icon">{card.icon}</div>
+              <div className="box1">
+                <div className="card-title">{card.title}</div>
+                <div className="card-desc">{card.description}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default OurService;

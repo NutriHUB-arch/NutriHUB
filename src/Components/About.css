@@ -12,7 +12,7 @@
 
 .about-section {
   animation: fadeSlideUp 1s ease-in-out;
-  background: #ffffff; /* Use white background for clarity */
+  /* background: #ffffff; Use white background for clarity */
   font-family: "Clash Display";
   font-weight: 500;
   max-width: 1500px;
@@ -21,7 +21,7 @@
   flex-wrap: wrap;
   gap: 1.5rem; /* Space between cards */
   padding: 2rem;
-  margin: -82px auto;
+  margin: -170px auto;
   position: relative;
 }
 
@@ -35,8 +35,8 @@
     #0e791d 74%,
     #084210 100%
   );
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-radius: 24px;
+  box-shadow: 0 1px 24px rgba(0, 0, 0, 0.1);
   color: white;
   max-width: 1300px;
   font-family: "Gilroy-Medium";

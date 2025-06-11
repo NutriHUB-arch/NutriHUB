@@ -1,49 +1,163 @@
-  import React from 'react';
-  import './Navbar.css';
-  import logo from '../Images/l.svg';
-   import txt from '../Images/text.svg';
+import React, { useState, useEffect } from "react";
+import "./Navbar.css";
+import logo from "../Images/l.svg";
+import txt from "../Images/text.svg";
 
-  export default function Navbar(props) {
-    return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-        <div className="container">
-         <div className="flex1">
-           <a className="navbar-brand d-flex align-items-center" href="#">
-            <div className='Heading'>
-              <img src={logo} alt="Logo Icon" className="navbar-logo" />
-              <img src={txt} alt="Logo Text" className="navbar-logo2" />
-            </div>
-          </a>  
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav" 
-            aria-expanded="false" 
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-         </div>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li className="nav-item"><a className="nav-link" href="#">{props.menu}</a></li>
-              <li className="nav-item"><a className="nav-link" href="#about">{props.about}</a></li>
-              <li className="nav-item"><a className="nav-link" href="#specialities">{props.service}</a></li>
-              <li className="nav-item"><a className="nav-link" href="#testimonials">{props.blog}</a></li>
-              <li className="nav-item"><a className="nav-link" href="#faq">{props.faq}</a></li>
-              <li className="nav-item"><a className="nav-link" href="#contact">{props.contact}</a></li>
-            </ul>
-          </div>
-          <div className="navbar-right">
-              <a href="#consultation" className="nav-btn primary">Get Started</a>
-         </div>
+export default function Navbar(props) {
+  const [activeSection, setActiveSection] = useState("home");
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = [
+        "home",
+        "about",
+        "specialities",
+        "testimonials",
+        "faq",
+        "contact",
+      ];
+      const scrollPosition = window.scrollY + 150;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        let element;
+
+        if (section === "home") {
+          if (window.scrollY < 100) {
+            setActiveSection("home");
+            return;
+          }
+        } else {
+          element = document.getElementById(section);
+          if (element && element.offsetTop <= scrollPosition) {
+            setActiveSection(section);
+            return;
+          }
+        }
+      }
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleNavClick = (sectionId) => {
+    setActiveSection(sectionId);
+    if (sectionId === "home") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const offsetTop = element.offsetTop - 100;
+        window.scrollTo({ top: offsetTop, behavior: "smooth" });
+      }
+    }
+  };
+
+  return (
+    <nav className="navbar navbar-expand-lg bg-white shadow-sm">
+      <div className="container custom-navbar">
+        {/* Left: Logo */}
+        <div
+          className="navbar-left"
+          onClick={(e) => {
+            e.preventDefault();
+            handleNavClick("home");
+          }}
+        >
+          <img src={logo} alt="Logo Icon" className="navbar-logo" />
+          <img src={txt} alt="Logo Text" className="navbar-logo2" />
         </div>
-      </nav>
-    );
-  }
 
-
-
+        {/* Center: Navigation */}
+        <ul className="navbar-center">
+          <li className="nav-item">
+            <a
+              className={`nav-link ${activeSection === "home" ? "active" : ""}`}
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick("home");
+              }}
+            >
+              {props.menu}
+            </a>
+          </li>
+          <li className="nav-item">
+            <a
+              className={`nav-link ${
+                activeSection === "about" ? "active" : ""
+              }`}
+              href="#about"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick("about");
+              }}
+            >
+              {props.about}
+            </a>
+          </li>
+          <li className="nav-item">
+            <a
+              className={`nav-link ${
+                activeSection === "specialities" ? "active" : ""
+              }`}
+              href="#specialities"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick("specialities");
+              }}
+            >
+              {props.service}
+            </a>
+          </li>
+          <li className="nav-item">
+            <a
+              className={`nav-link ${
+                activeSection === "testimonials" ? "active" : ""
+              }`}
+              href="#testimonials"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick("testimonials");
+              }}
+            >
+              {props.blog}
+            </a>
+          </li>
+          <li className="nav-item">
+            <a
+              className={`nav-link ${activeSection === "faq" ? "active" : ""}`}
+              href="#faq"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick("faq");
+              }}
+            >
+              {props.faq}
+            </a>
+          </li>
+          <li className="nav-item">
+            <a
+              className={`nav-link ${
+                activeSection === "contact" ? "active" : ""
+              }`}
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick("contact");
+              }}
+            >
+              {props.contact}
+            </a>
+          </li>
+        </ul>
+          <div className="navbar-right">
+            <button className="nav-btn primary" href="#consultation"onClick={(e) => { e.preventDefault();handleNavClick("consultation");  }}>Get Started</button>
+            <button className="nav-btn outline" href="#services1"onClick={(e) => { e.preventDefault();handleNavClick("services1");  }}>Learn More</button>
+          </div>
+      </div>
+    </nav>
+  );
+}
