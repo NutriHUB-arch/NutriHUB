@@ -5,6 +5,7 @@ import txt from "../Images/text.svg";
 
 export default function Navbar(props) {
   const [activeSection, setActiveSection] = useState("home");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,6 +45,8 @@ export default function Navbar(props) {
 
   const handleNavClick = (sectionId) => {
     setActiveSection(sectionId);
+    setIsMobileMenuOpen(false); // Close mobile menu when navigating
+    
     if (sectionId === "home") {
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
@@ -53,6 +56,10 @@ export default function Navbar(props) {
         window.scrollTo({ top: offsetTop, behavior: "smooth" });
       }
     }
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   return (
@@ -70,7 +77,7 @@ export default function Navbar(props) {
           <img src={txt} alt="Logo Text" className="navbar-logo2" />
         </div>
 
-        {/* Center: Navigation */}
+        {/* Desktop Navigation */}
         <ul className="navbar-center">
           <li className="nav-item">
             <a
@@ -153,10 +160,140 @@ export default function Navbar(props) {
             </a>
           </li>
         </ul>
-          <div className="navbar-right">
-            <button className="nav-btn primary" href="#consultation"onClick={(e) => { e.preventDefault();handleNavClick("consultation");  }}>Get Started</button>
-            <button className="nav-btn outline" href="#services1"onClick={(e) => { e.preventDefault();handleNavClick("services1");  }}>Learn More</button>
+
+        {/* Desktop Buttons */}
+        <div className="navbar-right">
+          <button 
+            className="nav-btn primary" 
+            onClick={(e) => { 
+              e.preventDefault();
+              handleNavClick("consultation");  
+            }}
+          >
+            Get Started
+          </button>
+          <button 
+            className="nav-btn outline" 
+            onClick={(e) => { 
+              e.preventDefault();
+              handleNavClick("about");  
+            }}
+          >
+            Learn More
+          </button>
+        </div>
+
+        {/* Mobile Hamburger Button */}
+        <button 
+          className="mobile-menu-toggle"
+          onClick={toggleMobileMenu}
+          aria-label="Toggle mobile menu"
+        >
+          <span className={`hamburger-line ${isMobileMenuOpen ? 'open' : ''}`}></span>
+          <span className={`hamburger-line ${isMobileMenuOpen ? 'open' : ''}`}></span>
+          <span className={`hamburger-line ${isMobileMenuOpen ? 'open' : ''}`}></span>
+        </button>
+
+        {/* Mobile Menu Overlay */}
+        <div className={`mobile-menu-overlay ${isMobileMenuOpen ? 'open' : ''}`}>
+          <div className="mobile-menu-content">
+            <ul className="mobile-nav-list">
+              <li className="mobile-nav-item">
+                <a
+                  className={`mobile-nav-link ${activeSection === "home" ? "active" : ""}`}
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick("home");
+                  }}
+                >
+                  {props.menu}
+                </a>
+              </li>
+              <li className="mobile-nav-item">
+                <a
+                  className={`mobile-nav-link ${activeSection === "about" ? "active" : ""}`}
+                  href="#about"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick("about");
+                  }}
+                >
+                  {props.about}
+                </a>
+              </li>
+              <li className="mobile-nav-item">
+                <a
+                  className={`mobile-nav-link ${activeSection === "specialities" ? "active" : ""}`}
+                  href="#specialities"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick("specialities");
+                  }}
+                >
+                  {props.service}
+                </a>
+              </li>
+              <li className="mobile-nav-item">
+                <a
+                  className={`mobile-nav-link ${activeSection === "testimonials" ? "active" : ""}`}
+                  href="#testimonials"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick("testimonials");
+                  }}
+                >
+                  {props.blog}
+                </a>
+              </li>
+              <li className="mobile-nav-item">
+                <a
+                  className={`mobile-nav-link ${activeSection === "faq" ? "active" : ""}`}
+                  href="#faq"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick("faq");
+                  }}
+                >
+                  {props.faq}
+                </a>
+              </li>
+              <li className="mobile-nav-item">
+                <a
+                  className={`mobile-nav-link ${activeSection === "contact" ? "active" : ""}`}
+                  href="#contact"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick("contact");
+                  }}
+                >
+                  {props.contact}
+                </a>
+              </li>
+            </ul>
+            
+            <div className="mobile-buttons">
+              <button 
+                className="mobile-btn primary" 
+                onClick={(e) => { 
+                  e.preventDefault();
+                  handleNavClick("consultation");  
+                }}
+              >
+                Get Started
+              </button>
+              <button 
+                className="mobile-btn outline" 
+                onClick={(e) => { 
+                  e.preventDefault();
+                  handleNavClick("about");  
+                }}
+              >
+                Learn More
+              </button>
+            </div>
           </div>
+        </div>
       </div>
     </nav>
   );

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './OurService.css';
 import { FaClipboardList, FaUserMd, FaSyncAlt, FaChartLine, FaRedoAlt, FaTag } from 'react-icons/fa';
 
@@ -14,6 +14,7 @@ const serviceCards = [
 const OurService = () => {
   const sliderRef = useRef(null);
   const indexRef = useRef(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const slider = sliderRef.current;
@@ -26,9 +27,11 @@ const OurService = () => {
       if (indexRef.current >= serviceCards.length) {
         // Reset index to 0 and scroll instantly (no animation) to start
         indexRef.current = 0;
+        setCurrentIndex(0);
         slider.scrollTo({ left: 0, behavior: 'auto' });
       } else {
         // Scroll smoothly to next card
+        setCurrentIndex(indexRef.current);
         slider.scrollTo({
           left: indexRef.current * cardWidth,
           behavior: 'smooth',
@@ -39,12 +42,25 @@ const OurService = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const goToSlide = (index) => {
+    const slider = sliderRef.current;
+    if (!slider) return;
+    
+    indexRef.current = index;
+    setCurrentIndex(index);
+    const cardWidth = slider.offsetWidth;
+    slider.scrollTo({
+      left: index * cardWidth,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <div id="services1" className="our-service">
       <div className="radial-container">
         <div className="service-header">
           <h2>Our Service</h2>
-          <div className="sub"></div>
+          <p>Comprehensive nutrition solutions for all your health needs</p>
         </div>
 
         <div className="rings">
@@ -62,6 +78,17 @@ const OurService = () => {
                 <div className="card-desc">{card.description}</div>
               </div>
             </div>
+          ))}
+        </div>
+
+        {/* Pagination dots for mobile */}
+        <div className="service-pagination">
+          {serviceCards.map((_, index) => (
+            <div
+              key={index}
+              className={`pagination-dot ${currentIndex === index ? 'active' : ''}`}
+              onClick={() => goToSlide(index)}
+            />
           ))}
         </div>
       </div>

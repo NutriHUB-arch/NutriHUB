@@ -44,7 +44,7 @@ export default function TestimonialSlider() {
       days: 90,
       imageBefore: require("../Images/before4.jpg"),
       imageAfter: require("../Images/after4.jpg"),
-      review: `I lost 23 kg in just 3 months during the lockdown. I never thought this transformation was possible from home, but with the right guidance and plan, I did it! I feel lighter, healthier, and more confident now. It’s a new start for me!`,
+      review: `I lost 23 kg in just 3 months during the lockdown. I never thought this transformation was possible from home, but with the right guidance and plan, I did it! It's a new start for me!`,
     },
     {
       name: "Simran Pandya",
@@ -74,7 +74,7 @@ export default function TestimonialSlider() {
       days: 180,
       imageBefore: require("../Images/before7.jpg"),
       imageAfter: require("../Images/after7.jpg"),
-      review: `Dropping 26 kg was something I never imagined! I feel lighter, fitter, and proud of who I’ve become. A life-changing experience!`,
+      review: `Dropping 26 kg was something I never imagined! I feel lighter, fitter, and proud of who I've become. A life-changing experience!`,
     },
   ];
 
@@ -87,13 +87,30 @@ export default function TestimonialSlider() {
     autoplay: true,
     autoplaySpeed: 3500,
     responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 768, settings: { slidesToShow: 1 } },
+      { 
+        breakpoint: 1024, 
+        settings: { 
+          slidesToShow: 2,
+          dots: true
+        } 
+      },
+      { 
+        breakpoint: 768, 
+        settings: { 
+          slidesToShow: 1,
+          dots: true
+        } 
+      },
     ],
+    customPaging: function() {
+      return (
+        <div className="custom-dot"></div>
+      );
+    }
   };
 
   return (
-    <div id="testimony" className="testimonial-section">
+    <div id="testimonials" className="testimonial-section">
       <p className="testimonial-label">TESTIMONIAL</p>
       <h2 className="testimonial-heading">Our Client Say</h2>
       <div className="testimonial-slider-container">
@@ -120,14 +137,11 @@ export default function TestimonialSlider() {
                   src="https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbnKFKgVn05bH06XzV6T0aAtdg8Gg82.jpg"
                   alt={t.name}
                 />
-                <div>
-                  <div class="reviewer-details">
-                    <div className="reviewer-name">
-                      {t.name}{" "}
-                      <span className="stars">{"★".repeat(t.stars)}</span>
-                    </div>
-                  </div>
+                <div className="reviewer-details">
+                  <div className="reviewer-name">{t.name}</div>
+                  <div className="stars">{"★".repeat(t.stars)}</div>
                 </div>
+                <div className="slick-dots"></div>
               </div>
             </div>
           ))}

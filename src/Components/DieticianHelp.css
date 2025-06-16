@@ -4,7 +4,7 @@
   text-align: center;
   font-family: 'Segoe UI', sans-serif;
   max-height: 100%;
-  margin-top: 100px;
+  margin-top: 180px;
 }
 
 .dietician-container h2 {
@@ -38,7 +38,7 @@
 .dietician-card:hover {
   transform: translateY(-6px);
   background: linear-gradient(
-    90deg,
+    to bottom right,
     #084210 0%,
     #0e7d1d 19%,
     #084210 49%,
@@ -85,4 +85,86 @@
 
 .highlight-card .card-desc {
   color: #e9ffe5;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .dietician-container {
+    padding: 50px 15px;
+    margin-top: 80px;
+  }
+  
+  .dietician-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+  
+  .dietician-cards {
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .dietician-card {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    min-height: 200px;
+    padding: 20px;
+  }
+  
+  .card-icon {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  
+  .card-title {
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+  
+  .card-desc {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dietician-container {
+    padding: 40px 10px;
+    margin-top: 60px;
+  }
+  
+  .dietician-container h2 {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+  }
+  
+  .dietician-cards {
+    gap: 15px;
+    justify-content: baseline;
+  }
+  
+  .dietician-card {
+    max-width: 90%;
+    min-height: 180px;
+    padding: 16px;
+    justify-content: baseline;
+    align-items: baseline;
+  }
+  
+  .card-icon {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .card-title {
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+  }
+  
+  .card-desc {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
 }

@@ -1,11 +1,12 @@
 import React from "react";
 import "./About.css";
+import arrow from '../Images/Vector.svg'
 
 export default function About() {
   return (
     <div id="about" className="about-section container-fluid py-5 px-3">
       {/* Stats Box */}
-      <div className="stats-box row mx-auto mb-5 px-2 text-center ">
+      <div className="stats-box row mx-auto mb-8 px-2 text-center ">
         <div className="col-6 col-md-3 stat-item">
           <h3>3+</h3>
           <p>Total Industries</p>
@@ -25,7 +26,7 @@ export default function About() {
       </div>
 
       {/* About Section */}
-      <h2 className="text-center fw-bold mb-3">About Nutrihub</h2>
+      <h2 className="text-center fw-bold mb-3 ">About Nutrihub</h2>
       <p className="text-center text-muted mb-5 px-md-5">
         Nutrihub is your trusted partner in achieving optimal <br></br> health
         through personalized nutrition guidance
@@ -35,13 +36,17 @@ export default function About() {
         {/* Vision Section */}
         <div className="col-md-6 mb-4 px-4">
           <div className="vision-box p-4 rounded-4 shadow">
-            <h5 className="title fw-semibold">Our Vision</h5>
+            <h4 className="title fw-semibold">Our Vision</h4>
             <p className="text">
               To empower individuals with evidence-based nutrition strategies
               that promote long-term health and wellness. We believe in
               sustainable lifestyle changes rather than quick fixes.
               <br />
-              <em>Megha Chandel's Credentials</em>
+              <em className="credential-link">
+                Megha Chandel's Credentials
+                <img src={arrow} alt="arrow icon" className="arrow-icon" />
+              </em>
+
             </p>
           </div>
         </div>

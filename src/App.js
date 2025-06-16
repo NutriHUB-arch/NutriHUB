@@ -11,6 +11,7 @@ import HowWeWork from './Components/HowWeWork';
 import ConsultationForm from './Components/ConsultationForm';
 import SpecialtiesSlider from './Components/SpecialtiesSlider';
 import TestimonialSlider from './Components/TestimonialSlider';
+import NutriHubBanner from './Components/NutriHubBanner';
 import './index.css'
 
 
@@ -24,6 +25,7 @@ function App() {
      <HowWeWork />
      <OurService />
      <DieticianHelp />
+     <NutriHubBanner />
      <TestimonialSlider />
      <ConsultationForm/>
      <FAQ />

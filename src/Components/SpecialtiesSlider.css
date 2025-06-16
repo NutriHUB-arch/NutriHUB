@@ -1,7 +1,7 @@
 /* SpecialtiesSlider.css */
 .specialties-slider {
   background: linear-gradient(to right, #98d300, #eaf7cb, #9cd40d);
-  margin-top: 120px;
+  margin-top: 180px;
 }
 
 .specialties-container {
@@ -11,7 +11,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 1.5rem;
-  padding: 60px 20px;
+  padding: 80px 20px;
   margin: auto;
   text-align: center;
   padding-bottom: 70px; 
@@ -22,14 +22,16 @@
   font-size: 2.2rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
+  padding-top: 0.5rem;
   color: #003d33;
 }
 
 .subheading {
   font-size: 1rem;
   color: #555;
-  margin-bottom: 2rem;
-  margin-left: 430px;
+  margin-bottom: 60px;
+  /* margin-left: 430px; */
+  text-align: center;
 }
 
 .specialty-card {
@@ -50,7 +52,7 @@
 .specialty-card:hover {
   transform: translateY(-6px);
   background: linear-gradient(
-    90deg,
+    to bottom right,
     #084210 0%,
     #0e7d1d 19%,
     #084210 49%,
@@ -89,14 +91,12 @@
 }
 
 /* Swiper pagination dots */
-
-
 /* Reserve space for pagination */
 .specialties-container .swiper {
   position: relative;
-  padding-bottom: 60px;
+  padding-bottom: 100px;
+  /* padding-top: 100px; */
 }
-
 /* Move pagination below cards */
 .swiper-pagination {
   position: absolute;
@@ -106,7 +106,6 @@
   text-align: center;
   z-index: 10;
 }
-
 /* Style the bullets */
 .swiper-pagination-bullet {
   background-color: #444;
@@ -117,5 +116,93 @@
 .swiper-pagination-bullet-active {
   background-color: #0e7d1d;
   opacity: 1;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .specialties-slider {
+    margin-top: 100px;
+  }
+  
+  .specialties-container {
+    padding: 85px 15px;
+    padding-bottom: 40px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .heading {
+    font-size: 1.8rem;
+  }
+  
+  .subheading {
+    font-size: 0.9rem;
+    margin-left: 0;
+    margin-bottom: 1.5rem;
+    padding: 0 20px;
+  }
+  
+  .specialty-card {
+    height: auto;
+    min-height: 220px;
+    padding: 1.2rem;
+  }
+  
+  .icon {
+    font-size: 2rem;
+  }
+  
+  .title {
+    font-size: 1.3rem;
+  }
+  
+  .description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .specialties-container {
+    /* padding: 60px 10px;
+    padding-bottom: 40px; */
+    margin: 15px auto;
+    padding: 60px 20px 30px 20px;
+    justify-content: center;
+
+    align-items: center;
+    text-align: center;
+  }
+  
+  .heading {
+    font-size: 1.6rem;
+    margin-top: 10px ;
+  }
+  
+  .subheading {
+    font-size: 0.85rem;
+    padding: 0 15px;
+  }
+  
+  .specialty-card {
+    padding: 1rem;
+    min-height: 260px;
+    margin-bottom: -18px;
+  }
+  
+  .icon {
+    font-size: 40px;
+    margin-bottom: 28px;
+  }
+  
+  .title {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  
+  .description {
+    font-size: 16px;
+    line-height: 1.4;
+  }
 }
 

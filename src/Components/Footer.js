@@ -2,6 +2,8 @@ import React from 'react';
 import './Footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faYoutube, faInstagram, faWhatsapp, faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { faLocationDot, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+
 export default function Footer() {
   return (
     <footer id="contact" className="footer">
@@ -12,11 +14,20 @@ export default function Footer() {
           <p className="footer-description">
             Your trusted partner in personalized nutrition. Helping you live healthier with simple, science-backed diet plans.
           </p>
-          <p className="footer-contact">
-            📍 Ujjain, Madhya Pradesh<br />
-            📞 +91-9301902225<br />
-            📧 megha.chandel@gmail.com
-          </p>
+          <div className="contact-icons">
+            <a href="https://maps.google.com/?q=Ujjain,MadhyaPradesh" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faLocationDot} />
+              <span>Ujjain, Madhya Pradesh</span>
+            </a>
+            <a href="tel:+919301902225">
+              <FontAwesomeIcon icon={faPhone} />
+              <span>+91-9301902225</span>
+            </a>
+            <a href="mailto:megha.chandel@gmail.com">
+              <FontAwesomeIcon icon={faEnvelope} />
+              <span>megha.chandel@gmail.com</span>
+            </a>
+          </div>
         </div>
 
         {/* Links section */}
@@ -36,20 +47,20 @@ export default function Footer() {
             <h3>Follow Us</h3>
             <ul>
               {/* Social Icons Container */}
-                    <div className="social-icons">
-                      <a href="https://www.youtube.com/@dieticianmeghachandel5061" target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faYoutube} />
-                      </a>
-                      <a href="https://www.instagram.com/dieticianmegha/" target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faInstagram} />
-                      </a>
-                      <a href="https://wa.me/9301902225" target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faWhatsapp} />
-                      </a>
-                      <a href="https://www.facebook.com/dieticianmegha/" target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faFacebook} />
-                      </a>
-                    </div>
+              <div className="social-icons">
+                <a href="https://www.youtube.com/@dieticianmeghachandel5061" target="_blank" rel="noopener noreferrer">
+                  <FontAwesomeIcon icon={faYoutube} />
+                </a>
+                <a href="https://www.instagram.com/dieticianmegha/" target="_blank" rel="noopener noreferrer">
+                  <FontAwesomeIcon icon={faInstagram} />
+                </a>
+                <a href="https://wa.me/9301902225" target="_blank" rel="noopener noreferrer">
+                  <FontAwesomeIcon icon={faWhatsapp} />
+                </a>
+                <a href="https://www.facebook.com/dieticianmegha/" target="_blank" rel="noopener noreferrer">
+                  <FontAwesomeIcon icon={faFacebook} />
+                </a>
+              </div>
             </ul>
           </div>
         </div>

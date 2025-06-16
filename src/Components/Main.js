@@ -59,10 +59,10 @@ export default function Main() {
         <div className="text-area">
           <h1 className="main-heading">
             Transform Your Health with <br />
-            <span className="highlight-name"><em className='sparle'>Megha Chandel</em></span>
+            <span className="highlight-name"><p className='sparle'>Megha Chandel</p></span>
           </h1>
           <p className="subheading1">
-            Unlock your transformation with Megha Chandel! As a certified nutrition expert with <b>18 years</b> of experience, she's guided over <b>1000+ clients</b> to remarkable results.
+            <div className="mc">Unlock your transformation with Megha Chandel!</div> As a certified nutrition expert with <b>18 years</b> of experience, she's guided over <b>1000+ clients</b> to remarkable results.
           </p>
         
           <ul className="benefits-list">
@@ -73,9 +73,6 @@ export default function Main() {
           </ul>
 
           <div className="cta-buttons">
-              {/* <button className="get-started-btn" href="#consultation"onClick={(e) => { e.preventDefault();handleNavClick("consultation");  }}>Get Started</button>  */}
-                {/* <button className="get-started-btn" >Get Started</button>
-                <button className="success-story-btn" href="#testimony"onClick={(e) => { e.preventDefault();handleNavClick("testimony");  }}>Success Story</button> */}
                 <div className="socials">
                     <a href="https://www.youtube.com/@dieticianmeghachandel5061" target="_blank" rel="noopener noreferrer">
                       <FontAwesomeIcon icon={faYoutube} className="social-icon youtube" />
@@ -90,7 +87,6 @@ export default function Main() {
                       <FontAwesomeIcon icon={faFacebook} className="social-icon facebook" />
                     </a>
                   </div>
-
           </div>
         </div>
 
