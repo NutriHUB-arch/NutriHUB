@@ -25,12 +25,10 @@ const OurService = () => {
       indexRef.current++;
 
       if (indexRef.current >= serviceCards.length) {
-        // Reset index to 0 and scroll instantly (no animation) to start
         indexRef.current = 0;
         setCurrentIndex(0);
         slider.scrollTo({ left: 0, behavior: 'auto' });
       } else {
-        // Scroll smoothly to next card
         setCurrentIndex(indexRef.current);
         slider.scrollTo({
           left: indexRef.current * cardWidth,
@@ -80,8 +78,6 @@ const OurService = () => {
             </div>
           ))}
         </div>
-
-        {/* Pagination dots for mobile */}
         <div className="service-pagination">
           {serviceCards.map((_, index) => (
             <div

@@ -65,7 +65,7 @@
   font-family: "gilroy-Medium";
 }
 
-/* Mobile Responsiveness */
+
 @media (max-width: 768px) {
   .faq-container {
     padding: 35px 15px;

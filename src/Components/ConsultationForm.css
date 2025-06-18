@@ -115,7 +115,7 @@ button:hover {
   background-color: #1b3a18;
 }
 
-/* Mobile Responsiveness */
+
 @media (max-width: 768px) {
   .consultation-container {
     padding: 50px 15px;

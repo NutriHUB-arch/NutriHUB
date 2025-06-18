@@ -5,7 +5,6 @@ import arrow from '../Images/Vector.svg'
 export default function About() {
   return (
     <div id="about" className="about-section container-fluid py-5 px-3">
-      {/* Stats Box */}
       <div className="stats-box row mx-auto mb-8 px-2 text-center ">
         <div className="col-6 col-md-3 stat-item">
           <h3>3+</h3>
@@ -24,8 +23,6 @@ export default function About() {
           <p>Years in Business</p>
         </div>
       </div>
-
-      {/* About Section */}
       <h2 className="text-center fw-bold mb-3 ">About Nutrihub</h2>
       <p className="text-center text-muted mb-5 px-md-5">
         Nutrihub is your trusted partner in achieving optimal <br></br> health
@@ -33,7 +30,6 @@ export default function About() {
       </p>
 
       <div className="row align-items-center justify-content-center">
-        {/* Vision Section */}
         <div className="col-md-6 mb-4 px-4">
           <div className="vision-box p-4 rounded-4 shadow">
             <h4 className="title fw-semibold">Our Vision</h4>
@@ -50,15 +46,13 @@ export default function About() {
             </p>
           </div>
         </div>
-
-        {/* Credentials Section */}
         <div className="col-md-6 px-4">
           <ul className="list-unstyled mt-3 flex3">
             <li className="credential-item mb-3 p-3 rounded-3 shadow-sm">
               <div className="checkmark">✓</div> Certified Clinical Nutritionist
             </li>
             <li className="credential-item mb-3 p-3 rounded-3 shadow-sm">
-              <div className="checkmark">✓</div> 5+ Years of Experience
+              <div className="checkmark">✓</div> 18+ Years of Experience
             </li>
             <li className="credential-item mb-3 p-3 rounded-3 shadow-sm">
               <div className="checkmark">✓</div> Specialized in PCOS & Diabetes

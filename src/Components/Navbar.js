@@ -45,7 +45,7 @@ export default function Navbar(props) {
 
   const handleNavClick = (sectionId) => {
     setActiveSection(sectionId);
-    setIsMobileMenuOpen(false); // Close mobile menu when navigating
+    setIsMobileMenuOpen(false); 
     
     if (sectionId === "home") {
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -65,7 +65,6 @@ export default function Navbar(props) {
   return (
     <nav className="navbar navbar-expand-lg bg-white shadow-sm">
       <div className="container custom-navbar">
-        {/* Left: Logo */}
         <div
           className="navbar-left"
           onClick={(e) => {
@@ -76,8 +75,6 @@ export default function Navbar(props) {
           <img src={logo} alt="Logo Icon" className="navbar-logo" />
           <img src={txt} alt="Logo Text" className="navbar-logo2" />
         </div>
-
-        {/* Desktop Navigation */}
         <ul className="navbar-center">
           <li className="nav-item">
             <a
@@ -160,8 +157,6 @@ export default function Navbar(props) {
             </a>
           </li>
         </ul>
-
-        {/* Desktop Buttons */}
         <div className="navbar-right">
           <button 
             className="nav-btn primary" 
@@ -182,8 +177,6 @@ export default function Navbar(props) {
             Learn More
           </button>
         </div>
-
-        {/* Mobile Hamburger Button */}
         <button 
           className="mobile-menu-toggle"
           onClick={toggleMobileMenu}
@@ -193,8 +186,6 @@ export default function Navbar(props) {
           <span className={`hamburger-line ${isMobileMenuOpen ? 'open' : ''}`}></span>
           <span className={`hamburger-line ${isMobileMenuOpen ? 'open' : ''}`}></span>
         </button>
-
-        {/* Mobile Menu Overlay */}
         <div className={`mobile-menu-overlay ${isMobileMenuOpen ? 'open' : ''}`}>
           <div className="mobile-menu-content">
             <ul className="mobile-nav-list">

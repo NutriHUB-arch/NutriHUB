@@ -45,11 +45,9 @@
     #0e791d 74%,
     #084210 100%
   );
-  /* color: white !important; */
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
-/* Make sure all inner text also changes */
 .dietician-card:hover * {
   color: #e2fddc !important;
 }
@@ -87,7 +85,6 @@
   color: #e9ffe5;
 }
 
-/* Mobile Responsiveness */
 @media (max-width: 768px) {
   .dietician-container {
     padding: 50px 15px;

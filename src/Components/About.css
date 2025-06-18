@@ -1,4 +1,3 @@
-/* General animation */
 @keyframes fadeSlideUp {
   from {
     opacity: 0;
@@ -25,7 +24,7 @@
   position: relative;
 }
 
-/* Stats box (top green card with 4 items) */
+
 .stats-box {
   background: linear-gradient(
     to bottom right,
@@ -68,7 +67,7 @@
   font-family: "Clash Display";
 }
 
-/* Vision Box */
+
 .vision-box {
   background: linear-gradient(135deg, #a4e400, #d0f37c, #a4e400);
   border-radius: 20px;
@@ -125,7 +124,7 @@
   z-index: 1;
 }
 
-/* Shine effect using ::after */
+
 .vision-box em::after {
   content: "";
   position: absolute;
@@ -152,7 +151,6 @@
   }
 }
 
-/* Credential Items */
 .credential-item {
   display: flex;
   align-items: center;
@@ -177,7 +175,6 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Mobile Responsiveness */
 @media (max-width: 768px) {
   .about-section {
     margin: -150px auto;

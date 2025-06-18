@@ -25,10 +25,6 @@ const NutriHubBanner = () => {
         }}
       >
         <img src={oldlogo} alt="oldlogo Icon" className="nutrihub-logo" />
-        {/* <div className="text-content">
-          <h1 className="nutrihub-title">NUTRI HUB</h1>
-          <p className="nutrihub-subtitle">Your Journey to Healthier Living</p>
-        </div> */}
       </div>
       <div className="slogan">
         <h2>

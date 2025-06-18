@@ -1,10 +1,8 @@
 .how-we-work-container {
-  /* background-color: #f9fbf8; */
   margin-top: 80px;
   border-radius: 10px;
   padding: 60px 5px;
   text-align: center;
-  /* margin: 60px auto; */
   font-family: 'Segoe UI', sans-serif;
  
 }
@@ -49,7 +47,7 @@
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
 }
 .step-number:hover {
-  background-color: #c0d97a; /* Slightly darker on hover */
+  background-color: #c0d97a; 
   scale: 1.1; 
 }
 
@@ -66,10 +64,10 @@
   line-height: 1.4;
 }
 
-/* Mobile Responsiveness */
+
 @media (max-width: 768px) {
   .how-we-work-container {
-    padding: 50px 20px 20px 20px; /* Reduced bottom padding */
+    padding: 50px 20px 20px 20px;
   }
   
   .how-we-work-title {
@@ -111,7 +109,7 @@
 
 @media (max-width: 480px) {
   .how-we-work-container {
-    padding: 40px 15px 15px 15px; /* Reduced bottom padding */
+    padding: 40px 15px 15px 15px;
   }
   
   .how-we-work-title {

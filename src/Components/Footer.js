@@ -30,7 +30,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Links section */}
         <div className="footer-links">
           <div className="link-group">
             <h3>Quick Links</h3>
@@ -46,7 +45,6 @@ export default function Footer() {
           <div className="link-group">
             <h3>Follow Us</h3>
             <ul>
-              {/* Social Icons Container */}
               <div className="social-icons">
                 <a href="https://www.youtube.com/@dieticianmeghachandel5061" target="_blank" rel="noopener noreferrer">
                   <FontAwesomeIcon icon={faYoutube} />

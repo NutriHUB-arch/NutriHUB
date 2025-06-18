@@ -6,7 +6,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 120px 20px; /* Account for fixed navbar height */
+  padding: 120px 20px;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -44,8 +44,8 @@
   gap: 20px;
 }
 .socials svg {
-  font-size: 38px; /* Increase or decrease as needed */
-  margin: 2px 10px; /* Optional spacing between icons */
+  font-size: 38px; 
+  margin: 2px 10px; 
   color: #003d33;
   transition: transform 0.3s ease;
   position: relative;
@@ -176,7 +176,7 @@
   z-index: 1;
 }
 
-/* Mobile & Tablet View (up to 1024px) */
+
 @media only screen and (max-width: 767px) {
    .hero-content {
     flex-direction: column;
@@ -337,7 +337,6 @@
   .icon-bottom-right { top: 70%; right: 2%; }
 }
 
-/* Laptop View (1025px and above) */
 @media (min-width: 1025px) {
   .profile-image {
     height: 540px;
